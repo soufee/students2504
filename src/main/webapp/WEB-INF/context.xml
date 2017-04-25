@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Context>
+
+    <resource name="newDS" auth="Container"
+              type="javax.sql.DataSource"/>
+    <resourceparams name="newDS">
+        <parameter>
+            <name>factory</name>
+            <value>org.apache.tomcat.jdbc.pool.DataSourceFactory</value>
+        </parameter>
+        <parameter>
+            <name>url</name>
+            <value>jdbc:postgresql://localhost/ashamaz</value>
+        </parameter>
+        <parameter>
+            <name>username</name>
+            <value>postgres</value>
+        </parameter>
+        <parameter>
+            <name>password</name>
+            <value>mutanabbi1</value>
+        </parameter>
+        <parameter>
+            <name>driverClassName</name>
+            <value>org.postgresql.Driver</value>
+        </parameter>
+        <parameter>
+            <name>maxActive</name>
+            <value>100</value>
+        </parameter>
+        <parameter>
+            <name>maxIdle</name>
+            <value>10</value>
+        </parameter>
+        <parameter>
+            <name>maxWait</name>
+            <value>10000</value>
+        </parameter>
+        <parameter>
+            <name>removeAbandoned</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>removeAbandonedTimeout</name>
+            <value>60</value>
+        </parameter>
+    </resourceparams>
+
+</Context>
