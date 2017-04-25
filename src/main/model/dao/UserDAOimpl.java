@@ -9,11 +9,13 @@ import main.model.connection.ConnectionFactory;
 import main.model.pojo.User;
 import org.apache.log4j.Logger;
 import org.postgresql.util.PSQLException;
+import org.springframework.stereotype.Component;
 
 
 /**
  * Created by Shoma on 20.04.2017.
  */
+@Component
 public class UserDAOimpl implements UserDao {
 
     private static Logger LOGGER  = Logger.getLogger(MySessionListener.class);

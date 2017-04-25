@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSessionListener;
  */
 public class MySessionListener implements HttpSessionListener{
 
-    static final Logger rootLogger = LogManager.getRootLogger();
+
     static final Logger userLogger = LogManager.getLogger(MySessionListener.class);
     @Override
     public void sessionCreated(HttpSessionEvent se) {
