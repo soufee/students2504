@@ -7,6 +7,7 @@ import main.model.pojo.Student;
 import org.apache.log4j.Logger;
 import org.postgresql.util.PSQLException;
 import main.services.StudentServiceInterface;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.List;
 /**
  * Created by Shoma on 18.04.2017.
  */
-
+@Component
 public class StudentDAOImpl implements StudentServiceInterface {
 
     private static Logger LOGGER = Logger.getLogger(MySessionListener.class);

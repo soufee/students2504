@@ -2,9 +2,8 @@ package main.services;
 
 import main.controllers.listeners.MySessionListener;
 import main.model.pojo.Student;
+import main.qouters.Profiling;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,11 +11,10 @@ import java.util.List;
 /**
  * Created by Shoma on 19.04.2017.
  */
+@Profiling
 @Component
 public class StudentServiceImpl implements StudentServiceInterface {
     private static Logger LOGGER = Logger.getLogger(MySessionListener.class);
-
-
     private StudentServiceInterface studentDao;
 
     public List<Student> getAllStudents() {

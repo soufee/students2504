@@ -5,8 +5,6 @@ import main.model.pojo.Student;
 import main.services.StudentServiceInterface;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import javax.servlet.RequestDispatcher;
@@ -25,7 +23,7 @@ import java.util.List;
 public class ListController extends HttpServlet {
 
     @Autowired
-   private StudentServiceInterface studentService;
+    private StudentServiceInterface studentService;
     private static Logger LOGGER = Logger.getLogger(MySessionListener.class);
 
     @Override
@@ -39,7 +37,7 @@ public class ListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    LOGGER.debug("ListController работает -> doGet");
+        LOGGER.debug("ListController работает -> doGet");
         req.setAttribute("value", "Hello, Student!");
         List<Student> list = studentService.getAllStudents();
         req.setAttribute("list", list);
@@ -50,8 +48,8 @@ public class ListController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LOGGER.debug("ListController работает -> doPost");
-        String idEdit =   req.getParameter("idEdit");
-   LOGGER.debug("Edit вернул значение "+ idEdit);
+        String idEdit = req.getParameter("idEdit");
+        LOGGER.debug("Edit вернул значение " + idEdit);
         resp.sendRedirect("/students/listStudents");
         LOGGER.debug("Должн произойти перенаправление на страницу listStudents");
     }

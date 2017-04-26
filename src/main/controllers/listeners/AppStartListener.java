@@ -1,6 +1,7 @@
 package main.controllers.listeners;
 
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.xml.DOMConfigurator;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -14,7 +15,8 @@ public class AppStartListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        PropertyConfigurator.configure(AppStartListener.class.getClassLoader().getResource("log4j.xml"));
+   //   PropertyConfigurator.configure(AppStartListener.class.getClassLoader().getResource("log4j.xml"));
+       DOMConfigurator.configure(AppStartListener.class.getClassLoader().getResource("log4j.xml"));
 
     }
 

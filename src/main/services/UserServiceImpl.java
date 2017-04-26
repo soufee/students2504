@@ -3,12 +3,14 @@ package main.services;
 import main.controllers.listeners.MySessionListener;
 import main.model.dao.UserDao;
 import main.model.pojo.User;
+import main.qouters.Profiling;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by Shoma on 20.04.2017.
  */
+@Profiling
 @Component
 public class UserServiceImpl implements UserService{
     private static Logger LOGGER  = Logger.getLogger(MySessionListener.class);
