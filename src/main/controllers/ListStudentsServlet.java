@@ -1,9 +1,11 @@
-package main.controllers.servlets;
+package main.controllers;
 
 import main.controllers.listeners.MySessionListener;
 import main.model.pojo.Student;
 import org.apache.log4j.Logger;
 import main.services.StudentServiceImpl;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +17,8 @@ import java.io.IOException;
 /**
  * Created by Shoma on 20.04.2017.
  */
+@Component
+@RequestMapping(value = "/NewStudents")
 public class ListStudentsServlet extends HttpServlet {
     private static Logger LOGGER = Logger.getLogger(MySessionListener.class);
 
@@ -53,7 +57,7 @@ try {
     service.delete(Integer.parseInt(idForDel));
 
 }
-   resp.sendRedirect("/students/listStudents");
+   resp.sendRedirect("/listStudents");
         LOGGER.debug("Должн произойти перенаправление на страницу listStudents");
 
 

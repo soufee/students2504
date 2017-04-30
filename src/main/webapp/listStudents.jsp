@@ -20,7 +20,7 @@
 
 </tr>    <%--${requestScope.value}--%>
 
-<c:forEach items="${requestScope.list}" var="item">
+<c:forEach items="${list}" var="item">
 
     <tr>
         <td width="10%"><c:out value="${item.id}"/></td>
@@ -33,7 +33,7 @@
             <input type="button" value="Edit" width="100%" onclick="edit(${item.id})"/>
         </td>
         <td width="25%">
-            <form action="/students/NewStudents" method="post" style="margin:0;">
+            <form action="/NewStudents" method="post" style="margin:0;">
                 <input type="hidden" name="idDel" value="${item.id}"/>
               <input type="submit" value="Delete" width="100%"/>
             </form>
@@ -43,7 +43,7 @@
 <tr style="display:none;" id="edit_${item.id}">
 
     <td>
-    <form action="/students/hello" method="post">
+    <form action="/hello" method="post">
         <input type="hidden" name="idEdit" value="${item.id}"/>
         <input type="hidden" name="iName" value="${item.name}"/>
         <input type="hidden" name="iAge" value="${item.age}"/>
@@ -59,7 +59,7 @@
 </c:forEach>
     <tr>
         <td colspan="2">
-            <form action="/students/NewStudent.jsp" method="post">
+            <form action="/NewStudent.jsp" method="post">
             <input type="submit" value="Add"/>
             </form>
         </td>

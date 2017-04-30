@@ -1,8 +1,10 @@
-package main.controllers.servlets;
+package main.controllers;
 
 import main.controllers.listeners.MySessionListener;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import main.services.UserService;
 
@@ -16,6 +18,8 @@ import java.io.IOException;
 /**
  * Created by Shoma on 19.04.2017.
  */
+@Component
+@RequestMapping(value="/")
 public class LoginServlet extends HttpServlet {
 @Autowired
     private  UserService userService;

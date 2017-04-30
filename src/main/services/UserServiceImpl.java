@@ -10,13 +10,15 @@ import org.springframework.stereotype.Component;
 /**
  * Created by Shoma on 20.04.2017.
  */
-@Profiling
+
 @Component
 public class UserServiceImpl implements UserService{
     private static Logger LOGGER  = Logger.getLogger(MySessionListener.class);
-    private   UserDao userDAO;
+
+       UserDao userDAO;
 
     public UserDao getUserDAO() {
+        LOGGER.debug("Возвращаем USERDAO "+userDAO);
         return userDAO;
     }
 
@@ -26,12 +28,14 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User auth(String login, String password) {
+        LOGGER.debug("Попытка авторизации. Login: "+login+" password: "+password);
         User user = userDAO.findUserByLoginAndPassword(login, password);
 
 
         if (user != null && user.isBlocked()) {
             return null;
         }
+        LOGGER.debug("Возвращаем USER "+user);
         return user;
     }
 

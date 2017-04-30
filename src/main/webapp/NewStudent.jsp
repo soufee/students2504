@@ -11,7 +11,7 @@
     <title>Добавление нового студента</title>
 </head>
 <body>
-<form action="/students/NewStudents" method="post">
+<form action="/NewStudents" method="post">
     <input type="text" name="nameAdd" placeholder="name"/>
     <input type="text" name="ageAdd" placeholder="age"/>
     <input type="text" name="group_idAdd" placeholder="group_id"/>

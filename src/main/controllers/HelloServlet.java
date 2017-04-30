@@ -1,9 +1,11 @@
-package main.controllers.servlets;
+package main.controllers;
 
 import main.controllers.listeners.MySessionListener;
 import main.model.pojo.Student;
 import org.apache.log4j.Logger;
 import main.services.StudentServiceImpl;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,12 +17,16 @@ import java.io.IOException;
 /**
  * Created by Shoma on 18.04.2017.
  */
+@Component
+@RequestMapping(value="/hello")
+
 public class HelloServlet extends HttpServlet {
     private static Logger LOGGER = Logger.getLogger(MySessionListener.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
      //   resp.getWriter().println("who touch me la la la");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
+        LOGGER.debug("Диспатчер HelloServlet сработал");
         dispatcher.forward(req, resp);
      //   resp.sendRedirect();
 
@@ -49,7 +55,7 @@ public class HelloServlet extends HttpServlet {
         {
             LOGGER.debug("Возникла ошибка по время редактирования данных.");
         }
-        resp.sendRedirect("/students/listStudents");
+        resp.sendRedirect(req.getContextPath() + "/listStudents");
         LOGGER.debug("Должн произойти перенаправление на страницу listStudents");
     }
 }
